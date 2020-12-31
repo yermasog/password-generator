@@ -1,4 +1,4 @@
-var charLength = prompt("How many characters would you like?")
+  var charLength = parseInt(prompt("How many characters would you like?"))
 //write an error if less than 8 or more than 128, must be whole number 
 
 	var lowerCase = prompt("Do you want lowercase letters? yes/no")
@@ -6,29 +6,41 @@ var charLength = prompt("How many characters would you like?")
 	var numeric = prompt("Do you want to include numbers? yes/no")
 	var specialChar = prompt("Do you want to inlcude special characters? yes/no")
 
-	var length = charLength
-  var lower = lowerCase
-  var upper = upperCase
-  var number = numeric
-  var special = specialChar
+  var lower = "abcdefghijkjlmnopqrstuvwxyz";
+  var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var number = "0123456789";
+  var symbol = "!@#$%^&*(){}[]=<>/,.|~?;:-+'_`";
+
+  var masterList = ""
+  if (lowerCase){
+    masterList += lower 
+  } 
+
+  if (upperCase) {
+    masterList += upper
+  }
   
+  if (number) {
+    masterList += number
+  }
 
+  if (specialChar) {
+    masterList += symbol
+  }
 
-
-function getRandomLowerCase(){
-   return String.fromCharCode(Math.floor(Math.random()*26)+97);
-}
- function getRandomUpperCase(){
-       return String.fromCharCode(Math.floor(Math.random()*26)+65);
- }
       
- function getRandomNumber(){
-   return String.fromCharCode(Math.floor(Math.random()*10)+48);
+ function getRandomChar(){
+    return masterList[Math.floor(Math.random()*masterList.length)];
 }
-      
- function getRandomSymbol(){
-    var symbol = "!@#$%^&*(){}[]=<>/,.|~?";
-    return symbol[Math.floor(Math.random()*symbol.length)];
+
+function generatePassword() {
+  var passwordArr = []
+  for (var i = 0; i <= charLength; i++) {
+    let newChar = getRandomChar();
+    passwordArr.push(newChar)
+    
+  }
+return passwordArr.join("")
 }
 
 
