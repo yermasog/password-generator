@@ -1,10 +1,10 @@
   var charLength = parseInt(prompt("How many characters would you like?"))
 //write an error if less than 8 or more than 128, must be whole number 
 
-	var lowerCase = prompt("Do you want lowercase letters? yes/no")
-	var upperCase = prompt("Do you want uppercase letters yes/no")
-	var numeric = prompt("Do you want to include numbers? yes/no")
-	var specialChar = prompt("Do you want to inlcude special characters? yes/no")
+	var lowerCase = prompt("Do you want lowercase letters? yes/no").toLowerCase()
+	var upperCase = prompt("Do you want uppercase letters yes/no").toLowerCase()
+	var numeric = prompt("Do you want to include numbers? yes/no").toLowerCase()
+	var specialChar = prompt("Do you want to inlcude special characters? yes/no").toLowerCase()
 
   var lower = "abcdefghijkjlmnopqrstuvwxyz";
   var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -12,19 +12,19 @@
   var symbol = "!@#$%^&*(){}[]=<>/,.|~?;:-+'_`";
 
   var masterList = ""
-  if (lowerCase){
+  if (lowerCase==="yes"){
     masterList += lower 
   } 
 
-  if (upperCase) {
+  if (upperCase==="yes") {
     masterList += upper
   }
   
-  if (number) {
+  if (number==="yes") {
     masterList += number
   }
 
-  if (specialChar) {
+  if (specialChar==="yes") {
     masterList += symbol
   }
 
