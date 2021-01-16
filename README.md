@@ -7,5 +7,5 @@ This password generator uses a series of prompts to ask the user to select the c
 Deployed link:
 https://yermasog.github.io/password-generator/
 
-GitHun Repo:
+GitHub Repo:
 https://github.com/yermasog/password-generator

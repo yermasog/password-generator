@@ -1,55 +1,61 @@
-var charLength = parseInt(prompt("How many characters would you like?"))
-var lowerCase = prompt("Do you want lowercase letters? yes/no").toLowerCase()
-var upperCase = prompt("Do you want uppercase letters yes/no").toLowerCase()
-var numeric = prompt("Do you want to include numbers? yes/no").toLowerCase()
-var specialChar = prompt("Do you want to inlcude special characters? yes/no").toLowerCase()
+var charLength = (document.getElementById("charLength").value)
+var lowerCase = (document.getElementById("lowercase").checked)
+var upperCase = (document.getElementById("uppercase").checked)
+var numeric = (document.getElementById("numbers").checked)
+var specialChar = (document.getElementById("specialChar").checked)
 
 var lower = "abcdefghijkjlmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var symbol = "!@#$%^&*(){}[]=<>/,.|~?;:-+'_`";
 
-var masterList = ""
-if (lowerCase === "yes") {
-  masterList += lower
-}
+console.log(charLength)
+console.log(lowerCase)
+console.log(upperCase)
+console.log(numeric)
+console.log(specialChar)
 
-if (upperCase === "yes") {
-  masterList += upper
-}
+// var masterList = ""
+// if (lowerCase === "yes") {
+//   masterList += lower
+// }
 
-if (numeric === "yes") {
-  masterList += number
-}
+// if (upperCase === "yes") {
+//   masterList += upper
+// }
 
-if (specialChar === "yes") {
-  masterList += symbol
-}
+// if (numeric === "yes") {
+//   masterList += number
+// }
 
-function getRandomChar() {
-  return masterList[Math.floor(Math.random() * masterList.length)];
-}
+// if (specialChar === "yes") {
+//   masterList += symbol
+// }
 
-function generatePassword() {
-  var passwordArr = []
-  for (var i = 0; i <= charLength; i++) {
-    let newChar = getRandomChar();
-    passwordArr.push(newChar)
+// function getRandomChar() {
+//   return masterList[Math.floor(Math.random() * masterList.length)];
+// }
 
-  }
-  return passwordArr.join("")
-}
+// function generatePassword() {
+//   var passwordArr = []
+//   for (var i = 0; i <= charLength; i++) {
+//     let newChar = getRandomChar();
+//     passwordArr.push(newChar)
 
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+//   }
+//   return passwordArr.join("")
+// }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// // Assignment Code
+// var generateBtn = document.querySelector("#generate");
 
-  passwordText.value = password;
-}
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//   passwordText.value = password;
+// }
+
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
