@@ -1,61 +1,65 @@
-var charLength = (document.getElementById("charLength").value)
-var lowerCase = (document.getElementById("lowercase").checked)
-var upperCase = (document.getElementById("uppercase").checked)
-var numeric = (document.getElementById("numbers").checked)
-var specialChar = (document.getElementById("specialChar").checked)
+var charLength = document.getElementById("charLength")
+var lowerCase = document.getElementById("lowercase")
+var upperCase = document.getElementById("uppercase")
+var numeric = document.getElementById("numbers")
+var specialChar = document.getElementById("specialChar")
 
 var lower = "abcdefghijkjlmnopqrstuvwxyz";
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var symbol = "!@#$%^&*(){}[]=<>/,.|~?;:-+'_`";
 
-console.log(charLength)
-console.log(lowerCase)
-console.log(upperCase)
-console.log(numeric)
-console.log(specialChar)
+// console.log(lowerCase)
 
-// var masterList = ""
-// if (lowerCase === "yes") {
-//   masterList += lower
-// }
+var passwordArr = []
+var masterList = ""
 
-// if (upperCase === "yes") {
-//   masterList += upper
-// }
+function getRandomChar() {
+  return masterList[Math.floor(Math.random() * masterList.length)];
+}
 
-// if (numeric === "yes") {
-//   masterList += number
-// }
+function generatePassword() {
+  console.log(charLength)
+  console.log(lowerCase.checked)
+  console.log(upperCase.checked)
+  console.log(numeric.checked)
+  // console.log(specialChar)
+  charLength = parseInt(document.getElementById("charLength").value);
 
-// if (specialChar === "yes") {
-//   masterList += symbol
-// }
+  if (lowerCase.checked) {
+    masterList += lower
+  }
 
-// function getRandomChar() {
-//   return masterList[Math.floor(Math.random() * masterList.length)];
-// }
+  if (upperCase.checked) {
+    masterList += upper
+  }
 
-// function generatePassword() {
-//   var passwordArr = []
-//   for (var i = 0; i <= charLength; i++) {
-//     let newChar = getRandomChar();
-//     passwordArr.push(newChar)
+  if (numeric.checked) {
+    masterList += number
+  }
 
-//   }
-//   return passwordArr.join("")
-// }
+  if (specialChar.checked) {
+    masterList += symbol
+  }
+  for (var i = 0; i <= charLength; i++) {
+    let newChar = getRandomChar();
+    passwordArr.push(newChar)
 
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+  }
+  return passwordArr.join("")
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+}
 
-//   passwordText.value = password;
-// }
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
